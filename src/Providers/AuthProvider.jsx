@@ -13,7 +13,7 @@ const AuthProvider = ({children}) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
-    const setProfile =(name,photo,currentUser) =>{
+    const setProfile =(name,photo) =>{
        return updateProfile(auth.currentUser,{
         displayName:name , photoURL: photo
       })
@@ -34,7 +34,7 @@ const AuthProvider = ({children}) => {
         return signOut(auth);
     }
 
-
+    
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth, loggedUser => {
             setUser(loggedUser);
