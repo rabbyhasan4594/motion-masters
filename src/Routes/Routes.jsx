@@ -5,6 +5,8 @@ import Home from "../pages/Home/Home/Home";
 import Main from "../Layout/Main";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import Instructors from "../pages/Instructors/Instructors";
+
 
 
 
@@ -26,6 +28,11 @@ import Register from "../pages/Register/Register";
             path: '/register',
             element: <Register></Register>
         },
+        {
+            path: '/instructors',
+            element: <Instructors></Instructors>
+        },
+       
       ]
     },
   ]);

@@ -44,23 +44,7 @@ const Login = () => {
     
     
 
-    // const handleLogin = event => {
-    //     event.preventDefault();
-    //     const form = event.target;
-    //     const email = form.email.value;
-    //     const password = form.password.value;
-    //     form.reset();
-    //     signIn(email, password)
-    //         .then(result => {
-    //             const loggedUser = result.user;
-    //             console.log(loggedUser);
-    //             navigate(from, { replace: true })
-    //         })
-    //         .catch(error => {
-    //             console.error(error.message);
-    //             setError(error.message);
-    //         })
-    // }
+    
 
     return (
         <div>
