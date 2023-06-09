@@ -50,13 +50,13 @@ const Login = () => {
         <div>
             
             <div>
-                <div className="hero min-h-screen bg-gray-400 ">
-                    <div className="hero-content flex-col lg:flex-row lg:mt-14">
+                <div className="hero min-h-screen bg-slate-200">
+                    <div className="hero-content flex-col lg:flex-row lg:mt-14 pt-16">
                         <div className="text-center lg:text-left lg:w-1/3 lg:me-10">
 
                             <img className='rounded-lg ' src="https://i.ibb.co/2h9ByVY/main.png" alt="" />
                         </div>
-                        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-blue-950 ">
+                        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-slate-500 ">
                             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                                 <div className="form-control">
                                     <label className="label">
@@ -73,7 +73,7 @@ const Login = () => {
                                         name="password"
                                         placeholder="password" className="input input-bordered" required/>
                                     <label className="label">
-                                        <div className='text-orange-600'> Don't Have an Account? <Link to="/register" className='text-white'>Register</Link></div>
+                                        <div className='text-slate-950'> Don't Have an Account? <Link to="/register" className='text-white'>Register</Link></div>
                                     </label>
                                 </div>
                                 <div className="form-control mt-6">

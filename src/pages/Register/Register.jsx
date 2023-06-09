@@ -32,13 +32,13 @@ const Register = () => {
     };
     return (
         <div>
-            <div className="hero min-h-screen bg-gray-400 ">
+            <div className="hero min-h-screen bg-slate-200 pt-14">
                 <div className="hero-content flex-col lg:flex-row lg:mt-14">
                     <div className="text-center lg:text-left lg:w-1/2">
 
                         <img className='rounded-lg ' src="https://i.ibb.co/JjXTNgc/register-01.png" alt="" />
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-blue-950 lg:me-20">
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-slate-500 lg:me-20">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                             <div className="form-control">
                                 <label className="label">

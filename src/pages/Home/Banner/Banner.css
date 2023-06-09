@@ -1,0 +1,33 @@
+.carousel .slide .legend {
+    transition: all .5s ease-in-out;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    margin-left: -45%;
+    width: 90%;
+    border-radius: 10px;
+    background: none;
+    color: #fff;
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+    opacity: 1; 
+}
+@media only screen and (max-width: 600px) {
+    .carousel .slide .legend {
+        transition: all .5s ease-in-out;
+        position: absolute;
+        left: 50%;
+        margin-left: -45%;
+        width: 90%;
+        border-radius: 10px;
+        background: none;
+        color: #fff;
+        padding: 10px;
+        font-size: 12px;
+        text-align: center;
+        opacity: 1; 
+        bottom: 0px;
+        margin-bottom: 50px;
+    }
+  }
