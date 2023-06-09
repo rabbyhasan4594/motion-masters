@@ -6,7 +6,7 @@ import Main from "../Layout/Main";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Instructors from "../pages/Instructors/Instructors";
-
+import Classes from "../pages/Classes/Classes";
 
 
 
@@ -32,7 +32,10 @@ import Instructors from "../pages/Instructors/Instructors";
             path: '/instructors',
             element: <Instructors></Instructors>
         },
-       
+        {
+            path: '/classes',
+            element: <Classes></Classes>
+        },
       ]
     },
   ]);
