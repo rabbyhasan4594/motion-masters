@@ -34,7 +34,8 @@ import Classes from "../pages/Classes/Classes";
         },
         {
             path: '/classes',
-            element: <Classes></Classes>
+            element: <Classes></Classes>,
+            loader: () => fetch(`http://localhost:5000/classes`)
         },
       ]
     },
