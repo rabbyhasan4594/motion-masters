@@ -7,6 +7,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Instructors from "../pages/Instructors/Instructors";
 import Classes from "../pages/Classes/Classes";
+import PopularClasses from "../pages/Home/PopularClasses/PopularClasses";
 
 
 
@@ -37,6 +38,8 @@ import Classes from "../pages/Classes/Classes";
             element: <Classes></Classes>,
             loader: () => fetch(`http://localhost:5000/classes`)
         },
+       
+
       ]
     },
   ]);
