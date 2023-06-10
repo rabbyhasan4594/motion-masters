@@ -38,7 +38,11 @@ import PopularClasses from "../pages/Home/PopularClasses/PopularClasses";
             element: <Classes></Classes>,
             loader: () => fetch(`http://localhost:5000/classes`)
         },
-       
+        {
+            
+          element: <PopularClasses></PopularClasses>,
+            loader: () => fetch(`http://localhost:5000/popularClasses`)
+        },
 
       ]
     },
