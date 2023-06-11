@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query'
 import PopularInstructor from '../PopularInstructor/PopularInstructor';
+import usePopular from '../Home/usePopular/usePopular';
 
 const PopularInstructors = () => {
-    const [instructors, setInstructors] = useState([]);
-    useEffect(() => {
-        fetch(`http://localhost:5000/popularClasses`)
-          .then((res) => res.json())
-          .then((result) => {
-            setInstructors(result);
-            
-          });
-      }, []);
+
+    const [data]=usePopular();
+    const instructors =data;
      console.log(instructors);
     return (
 

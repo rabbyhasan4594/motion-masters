@@ -37,12 +37,12 @@ import PopularClasses from "../pages/Home/PopularClasses/PopularClasses";
         {
             path: '/classes',
             element: <Classes></Classes>,
-            loader: () => fetch(`http://localhost:5000/classes`)
+            loader: () => fetch(`https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/classes`)
         },
         {
             
           element: <PopularClasses></PopularClasses>,
-            loader: () => fetch(`http://localhost:5000/popularClasses`)
+            loader: () => fetch(`https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/popularClasses`)
         },
         {
           path: '/instructors',

@@ -6,7 +6,7 @@ const Instructors = () => {
     // const instructors = useLoaderData();
     const [instructors, setInstructors] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/instructors`)
+        fetch(`https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/instructors`)
           .then((res) => res.json())
           .then((result) => {
             setInstructors(result);
