@@ -12,6 +12,7 @@ import PopularClasses from "../pages/Home/PopularClasses/PopularClasses";
 
 
 
+
   export const router = createBrowserRouter([
     {
       path: "/",
@@ -43,6 +44,10 @@ import PopularClasses from "../pages/Home/PopularClasses/PopularClasses";
           element: <PopularClasses></PopularClasses>,
             loader: () => fetch(`http://localhost:5000/popularClasses`)
         },
+        {
+          path: '/instructors',
+          element: <Instructors></Instructors>,
+      },
 
       ]
     },

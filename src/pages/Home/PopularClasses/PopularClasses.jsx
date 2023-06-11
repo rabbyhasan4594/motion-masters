@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PopularClass from '../PopularClass/PopularClass';
 
+
 const PopularClasses = () => {
     const [classes, setClasses] = useState([]);
     useEffect(() => {
