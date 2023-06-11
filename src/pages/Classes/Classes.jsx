@@ -1,9 +1,11 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Class from './Class/Class';
+import usePopular from '../Home/Home/usePopular/usePopular';
 
 const Classes = () => {
-    const classes = useLoaderData();
+    const [data]=usePopular();
+    const classes =data;
     console.log(classes);
     return (
         <section className="mb-12">
