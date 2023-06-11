@@ -15,24 +15,39 @@ const Register = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 setProfile(data.name, data.photoURL)
-                    .then(() => {
-                        reset();
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'User created successfully.',
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                        navigate('/');
-
+                .then(() => {
+                    const saveUser = { name: data.name, email: data.email }
+                    fetch('http://localhost:5000/users', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify(saveUser)
                     })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.insertedId) {
+                                reset();
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: 'User created successfully.',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                });
+                                navigate('/');
+                            }
+                        })
+
+
+
+                })
                     .catch(error => console.error(error))
             })
     };
     return (
         <div>
-            <div className="hero min-h-screen bg-slate-200 pt-14">
+            <div className="hero min-h-screen bg-red-100 pt-14">
                 <div className="hero-content flex-col lg:flex-row lg:mt-14">
                     <div className="text-center lg:text-left lg:w-1/2">
 
