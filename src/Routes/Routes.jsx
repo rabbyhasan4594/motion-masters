@@ -8,6 +8,9 @@ import Register from "../pages/Register/Register";
 import Instructors from "../pages/Instructors/Instructors";
 import Classes from "../pages/Classes/Classes";
 import PopularClasses from "../pages/Home/PopularClasses/PopularClasses";
+import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../Layout/Dashboard";
+import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 
 
 
@@ -47,4 +50,15 @@ import PopularClasses from "../pages/Home/PopularClasses/PopularClasses";
 
       ]
     },
-  ]);
+    {
+      path: 'dashboard',
+      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>, 
+      children: [
+        {
+          path: 'allusers',
+          element:<AllUsers></AllUsers>
+        }
+      ]
+    }
+
+  ])
