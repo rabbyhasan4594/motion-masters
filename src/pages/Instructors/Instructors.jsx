@@ -1,18 +1,13 @@
-import React, { useEffect, useState } from 'react';
+
 import Instructor from '../Home/Instructor/Instructor';
+import usePopular from '../Home/Home/usePopular/usePopular';
 
 
 const Instructors = () => {
-    // const instructors = useLoaderData();
-    const [instructors, setInstructors] = useState([]);
-    useEffect(() => {
-        fetch(`https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/instructors`)
-          .then((res) => res.json())
-          .then((result) => {
-            setInstructors(result);
-            
-          });
-      }, []);
+   
+   
+     const [data]=usePopular();
+    const instructors =data;
      console.log(instructors);
     return (
 
