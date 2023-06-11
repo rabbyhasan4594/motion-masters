@@ -25,7 +25,7 @@ const NavigationBar = () => {
                   <li tabIndex={0}>
                     <NavLink to={"/instructors"}>Instructors</NavLink>
                   </li>
-                 
+                  <li><NavLink to={"/classes"}>Classes</NavLink></li>
                   <li><NavLink to={"/dashboard"}>Dashboard</NavLink></li>
                  
                 </div> : <div>
@@ -54,7 +54,7 @@ const NavigationBar = () => {
                   <li>
                     <NavLink to={"/instructors"} className='text-white'>Instructors</NavLink>
                   </li>
-                  
+                  <li><NavLink className='text-white'  to={"/classes"}>Classes</NavLink></li>
                   <li>
                     <NavLink to={"/dashboard"} className='text-white'>Dashboard</NavLink>
                    
@@ -82,7 +82,7 @@ const NavigationBar = () => {
               user ? <div className='flex justify-center items-center gap-3'>
                 
                 <div className="tooltip" data-tip={user.displayName}>
-                <img style={{ height: "40px", weight: "40px " }} src={user.photoURL} alt="" className='rounded-md ' />
+                <img  style={{ height: "40px", weight: "30px " }} src={user.photoURL} alt="" className='rounded-md ' />
                 </div>
 
                 <NavLink onClick={handleLogOut} to={"/login"} className="bg-transparent hover:bg-slate-950 text-white font-semibold hover:text-white py-2 px-4 border border-gray-600 hover:border-transparent rounded">LogOut</NavLink>
