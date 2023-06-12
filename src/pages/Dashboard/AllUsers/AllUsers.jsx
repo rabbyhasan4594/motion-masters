@@ -10,6 +10,8 @@ const AllUsers = () => {
         return res.json();
     })
 
+    const isAdmin =true;
+
 
     const handleMakeAdmin = user =>{
         fetch(`http://localhost:5000/users/admin/${user._id}`, {
@@ -57,36 +59,39 @@ const AllUsers = () => {
            
             
             <div className="overflow-x-auto">
-                <table className="table table-zebra w-full">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Current Role</th>
-                            <th>Make Admin</th>
-                            <th>Make Instructor</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            users.map((user, index) => <tr key={user._id}>
-                                <th>{index + 1}</th>
-                                <td>{user.name}</td>
-                                <td>{user.email}</td>
-                                <td>{user.role}</td>
-                                <td>{ user.role === 'admin' ? <button disabled={disabled} className="btn btn-info">Make Admin</button>  :
-                                    <button onClick={() => handleMakeAdmin(user)} className="btn btn-info">Make Admin</button> 
-                                    }</td>
-                                <td>{ user.role === 'instructor' ? <button disabled={disabled} className="btn btn-info">Make Instructor</button>  :
-                                    <button onClick={() => handleMakeInstructor(user)} className="btn btn-info">Make Instructor</button> 
-                                    }</td>
-                            </tr>)
-                        }
-                        
-                        
-                    </tbody>
-                </table>
+               {
+                isAdmin? <> <table className="table table-zebra w-full">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Current Role</th>
+                        <th>Make Admin</th>
+                        <th>Make Instructor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        users.map((user, index) => <tr key={user._id}>
+                            <th>{index + 1}</th>
+                            <td>{user.name}</td>
+                            <td>{user.email}</td>
+                            <td>{user.role}</td>
+                            <td>{ user.role === 'admin' ? <button disabled={disabled} className="btn btn-info">Make Admin</button>  :
+                                <button onClick={() => handleMakeAdmin(user)} className="btn btn-info">Make Admin</button> 
+                                }</td>
+                            <td>{ user.role === 'instructor' ? <button disabled={disabled} className="btn btn-info">Make Instructor</button>  :
+                                <button onClick={() => handleMakeInstructor(user)} className="btn btn-info">Make Instructor</button> 
+                                }</td>
+                        </tr>)
+                    }
+                    
+                    
+                </tbody>
+            </table></>:
+            <></>
+               }
             </div>
         </div>
         </div>

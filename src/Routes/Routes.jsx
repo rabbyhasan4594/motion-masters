@@ -11,6 +11,7 @@ import PopularClasses from "../pages/Home/PopularClasses/PopularClasses";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Layout/Dashboard";
 import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
+import MySelectedClasses from "../pages/Dashboard/MySelectedClasses/MySelectedClasses";
 
 
 
@@ -57,7 +58,11 @@ import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
         {
           path: 'allUsers',
           element:<AllUsers></AllUsers>
-        }
+        },
+        {
+          path: 'mySelectedClasses',
+          element:<MySelectedClasses></MySelectedClasses>
+        },
       ]
     }
 

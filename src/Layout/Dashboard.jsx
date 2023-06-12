@@ -5,7 +5,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
     // const [isAdmin] = useAdmin();
-    const isAdmin =true;
+    const isAdmin =false;
     const isInstructor =false;
     return (
         <div>
