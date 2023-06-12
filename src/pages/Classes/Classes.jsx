@@ -1,10 +1,11 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Class from './Class/Class';
-import usePopular from '../Home/Home/usePopular/usePopular';
+
+import useClassesAndInstructors from '../useClassesAndInstructors/useClassesAndInstructors';
 
 const Classes = () => {
-    const [data]=usePopular();
+    const [data]=useClassesAndInstructors();
     const classes =data;
     console.log(classes);
     return (

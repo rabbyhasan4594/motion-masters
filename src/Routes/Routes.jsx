@@ -55,7 +55,7 @@ import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
       element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>, 
       children: [
         {
-          path: 'allusers',
+          path: 'allUsers',
           element:<AllUsers></AllUsers>
         }
       ]

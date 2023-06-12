@@ -2,8 +2,11 @@ import React from 'react';
 import { FaBook, FaCalendarAlt, FaHome, FaUsers, FaUtensils, FaWallet } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
 
+
 const Dashboard = () => {
-    const isAdmin = true;
+    // const [isAdmin] = useAdmin();
+    const isAdmin =true;
+    const isInstructor =false;
     return (
         <div>
             <div className="drawer lg:drawer-open">
@@ -20,10 +23,25 @@ const Dashboard = () => {
                         isAdmin ? <>
                             <li><NavLink to="/dashboard/home"><FaHome></FaHome> Admin Home</NavLink></li>
                            
-                            <li><NavLink to="/dashboard/allusers"><FaUsers></FaUsers> All Users</NavLink></li>
+                            <li><NavLink to="/dashboard/allUsers"><FaUsers></FaUsers> All Users</NavLink></li>
+                            <li><NavLink to="/dashboard/manageClasses">Manage Classes</NavLink></li>
+                            <li><NavLink to="/dashboard/manageUsers"> Manage Users</NavLink></li>
                             
                         </> : <>
-                            <li><NavLink to="/dashboard/home"><FaHome></FaHome> User Home</NavLink></li>
+                        {
+                            isInstructor?<>
+                            <li><NavLink to="/dashboard/home"><FaHome></FaHome> Instructor Home</NavLink></li>
+                            <li><NavLink to="/dashboard/addAClass">Add a Class</NavLink></li>
+                            <li><NavLink to="/dashboard/myClasses"> My Classes</NavLink></li>
+                            </>:<>
+                            <li><NavLink to="/dashboard/home"><FaHome></FaHome> Student Home</NavLink></li>
+                            <li><NavLink to="/dashboard/mySelectedClasses"> My Selected Classes</NavLink></li>
+                            <li><NavLink to="/dashboard/myEnrolledClasses"> My Enrolled Classes</NavLink></li>
+                            <li><NavLink to="/dashboard/payment">Payment</NavLink></li>
+                            </>
+                        }
+                        
+                           
                             
                         </>
                     }

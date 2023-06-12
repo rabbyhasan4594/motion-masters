@@ -1,4 +1,4 @@
-import React from 'react';
+import { useQuery } from '@tanstack/react-query';
 
 const useClassesAndInstructors = () => {
     const { isLoading, isError, data: popular=[], error } = useQuery({

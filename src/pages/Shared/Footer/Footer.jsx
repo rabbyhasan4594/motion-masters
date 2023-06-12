@@ -6,8 +6,8 @@ const Footer = () => {
             <footer className="footer p-10 bg-slate-600 text-base-content">
   <div>
     <img className='w-1/3' src="https://i.ibb.co/0rth3sH/motion-masters-logo.png" alt="" />
-    <p className='text-white'>Toy Galaxy Ltd.<br/>Providing best toy car since 2020.
-    <br />Copyright © 2023 Toy Galaxy. All rights reserved.</p>
+    <p className='text-white'>
+    Copyright © 2023 Toy Galaxy. All rights reserved.</p>
   </div> 
   <div className='text-white'>
     <span className=" font-bold">Class-category</span> 

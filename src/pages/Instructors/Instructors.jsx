@@ -1,12 +1,13 @@
 
 import Instructor from '../Home/Instructor/Instructor';
-import usePopular from '../Home/Home/usePopular/usePopular';
+import useClassesAndInstructors from '../useClassesAndInstructors/useClassesAndInstructors';
+
 
 
 const Instructors = () => {
    
    
-     const [data]=usePopular();
+     const [data]=useClassesAndInstructors();
     const instructors =data;
      console.log(instructors);
     return (
