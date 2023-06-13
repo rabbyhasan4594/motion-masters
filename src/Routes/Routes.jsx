@@ -12,6 +12,7 @@ import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Layout/Dashboard";
 import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 import MySelectedClasses from "../pages/Dashboard/MySelectedClasses/MySelectedClasses";
+import Payment from "../pages/Dashboard/Payment/Payment";
 
 
 
@@ -62,6 +63,10 @@ import MySelectedClasses from "../pages/Dashboard/MySelectedClasses/MySelectedCl
         {
           path: 'mySelectedClasses',
           element:<MySelectedClasses></MySelectedClasses>
+        },
+        {
+          path: 'payment',
+          element:<Payment></Payment>
         },
       ]
     }

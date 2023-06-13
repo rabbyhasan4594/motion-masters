@@ -6,12 +6,12 @@ import { NavLink, Outlet } from 'react-router-dom';
 const Dashboard = () => {
     // const [isAdmin] = useAdmin();
     const isAdmin =false;
-    const isInstructor =false;
+    const isInstructor =true;
     return (
         <div>
             <div className="drawer lg:drawer-open">
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-  <div className="drawer-content flex flex-col items-center justify-center bg-red-100">
+  <div className="drawer-content flex flex-col  justify-center">
     <Outlet></Outlet>
     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
   

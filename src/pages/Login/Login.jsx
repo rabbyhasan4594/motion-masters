@@ -52,13 +52,13 @@ const Login = () => {
             
             <div>
                 <div className="hero min-h-screen bg-slate-200">
-                    <div className="hero-content flex-col lg:flex-row lg:mt-14 pt-16">
+                    <div className="hero-content flex-col lg:flex-row lg:mt-14 pt-16 lg:w-[1150px]">
                         <div className="text-center lg:text-left lg:w-1/3 lg:me-10">
 
                             <img className='rounded-lg ' src="https://i.ibb.co/2h9ByVY/main.png" alt="" />
                         </div>
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-slate-500 ">
-                            <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+                            <form onSubmit={handleSubmit(onSubmit)} className="card-body w-[360px] sm:w-[340px]">
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text text-white">Email</span>

@@ -4,7 +4,7 @@ import usePopular from '../Home/usePopular/usePopular';
 
 
 const PopularClasses = () => {
-    // const [classes, setClasses] = useState([]);
+    
     const [data]=usePopular();
     const classes =data;
     console.log(classes);

@@ -54,8 +54,8 @@ const Register = () => {
 
                         <img className='rounded-lg ' src="https://i.ibb.co/JjXTNgc/register-01.png" alt="" />
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-slate-500 lg:me-20">
-                        <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+                    <div className="card flex-shrink-0  max-w-sm shadow-2xl bg-slate-500 lg:w-[1150px] ">
+                        <form onSubmit={handleSubmit(onSubmit)} className="card-body w-[360px] sm:w-[340px]">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text text-white">Name</span>
@@ -95,7 +95,7 @@ const Register = () => {
                                 {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
                                 {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one Uppercase one lower case, one number and one special character.</p>}
                                 <label className="label">
-                                    <div>
+                                    <div className='text-slate-950'>
                                         Already Have an Account? <Link to="/login" className='text-white'>Login</Link>
                                     </div>
                                 </label>

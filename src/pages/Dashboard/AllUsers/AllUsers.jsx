@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 const AllUsers = () => {
     const [disabled, setDisabled] = useState(true);
     const {data:users=[], refetch}=useQuery(['users'],async()=>{
-        const res =await fetch('http://localhost:5000/users')
+        const res =await fetch('https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/users')
         return res.json();
     })
 
@@ -14,7 +14,7 @@ const AllUsers = () => {
 
 
     const handleMakeAdmin = user =>{
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+        fetch(`https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/users/admin/${user._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -34,7 +34,7 @@ const AllUsers = () => {
     }
 
     const handleMakeInstructor = user =>{
-        fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+        fetch(`https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/users/instructor/${user._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())

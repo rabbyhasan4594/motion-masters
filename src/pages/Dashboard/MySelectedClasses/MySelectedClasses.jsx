@@ -1,10 +1,18 @@
-import React from 'react';
+
 import useClasses from '../../../hooks/useClasses';
 import { FaTrashAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
 
 const MySelectedClasses = () => {
-    const [selected]=useClasses();
+    const [selected]=useClasses()
     console.log(selected);
+
+    const handleClick = user => {
+     
+    }
+    // console.log(pay);
+    
     return (
         <div>
         <div className="w-full">   
@@ -30,7 +38,9 @@ const MySelectedClasses = () => {
                          
                          <td>{user.instructorName}</td>
                          <td>{user.price}</td>
-                         <td> <button  className="btn btn-info">Pay</button> </td>
+                         <td> <Link to="/dashboard/payment">
+                         <button onClick={()=>handleClick(user)} className="btn btn-info">Pay</button>
+                         </Link> </td>
                          <td><button  className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button></td>
                          
                      </tr>)
