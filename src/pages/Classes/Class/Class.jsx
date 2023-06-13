@@ -12,8 +12,8 @@ const Class = ({data}) => {
     const [, refetch] = useClasses();
     const handleAddToSelected = data => {
         if(user && user.email){
-             const selectedClass = {selectedId: _id, name, image,instructorName,availableSeats, price, email: user.email}
-            fetch('https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/selected', {
+             const selectedClass = {_id: _id, name, image,instructorName,availableSeats, price, email: user.email,payment:'no'}
+            fetch('http://localhost:5000/selected', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

@@ -4,7 +4,7 @@ const usePopular = () => {
     const { isLoading, isError, data: popular=[], error } = useQuery({
         queryKey: ['popular'],
         queryFn: async () => {
-            const response = await fetch('https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/popular')
+            const response = await fetch('http://localhost:5000/popular')
             
             return response.json()
         }

@@ -18,7 +18,7 @@ const Register = () => {
                 setProfile(data.name, data.photoURL)
                 .then(() => {
                     const saveUser = { name: data.name, email: data.email,role:"student" }
-                    fetch('https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/users', {
+                    fetch('http://localhost:5000/users', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
