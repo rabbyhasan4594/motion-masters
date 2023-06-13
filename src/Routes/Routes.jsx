@@ -13,6 +13,7 @@ import Dashboard from "../Layout/Dashboard";
 import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 import MySelectedClasses from "../pages/Dashboard/MySelectedClasses/MySelectedClasses";
 import Payment from "../pages/Dashboard/Payment/Payment";
+import AddAClass from "../pages/Dashboard/AddAClass/AddAClass";
 
 
 
@@ -56,10 +57,19 @@ import Payment from "../pages/Dashboard/Payment/Payment";
       path: 'dashboard',
       element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>, 
       children: [
+        //admin
         {
           path: 'allUsers',
           element:<AllUsers></AllUsers>
         },
+
+        //Instructor
+        {
+          path: 'addAClass',
+          element:<AddAClass></AddAClass>
+        },
+
+        //student
         {
           path: 'mySelectedClasses',
           element:<MySelectedClasses></MySelectedClasses>
