@@ -12,7 +12,7 @@ const ManageClasses = () => {
 
 
     const handleClassApprove = user =>{
-        fetch(`http://localhost:5000/classesAndInstructors/approve/${user._id}`, {
+        fetch(`https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/classesAndInstructors/approve/${user._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -32,7 +32,7 @@ const ManageClasses = () => {
     }
 
     const handleClassDeny = user =>{
-        fetch(`http://localhost:5000/classesAndInstructors/deny/${user._id}`, {
+        fetch(`https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/classesAndInstructors/deny/${user._id}`, {
             method: 'PATCH'
         })
         .then(res => res.json())
