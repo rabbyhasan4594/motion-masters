@@ -10,15 +10,15 @@ const Register = () => {
     const { createUser,setProfile } = useContext(AuthContext);
     const navigate = useNavigate();
     const onSubmit = data => {
-        console.log(data);
+        
         createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
+               
                 setProfile(data.name, data.photoURL)
                 .then(() => {
                     const saveUser = { name: data.name, email: data.email,role:"student" }
-                    fetch('http://localhost:5000/users', {
+                    fetch('https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/users', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

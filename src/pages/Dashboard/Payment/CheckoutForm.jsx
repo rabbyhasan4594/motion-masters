@@ -6,7 +6,6 @@ import useAxiosSecure from '../../../hooks/useAxiosSecure';
 const CheckoutForm = ({paymentUser}) => {
     
     const {price} =paymentUser;
-    
     const stripe = useStripe();
     const elements = useElements();
     const { user } = useAuth();
@@ -22,7 +21,7 @@ const CheckoutForm = ({paymentUser}) => {
       if (price > 0) {
           axiosSecure.post('/create-payment-intent', { price })
               .then(res => {
-                  console.log(res.data.clientSecret);
+                  
                   setClientSecret(res.data.clientSecret);
               })
       }
@@ -33,7 +32,7 @@ const CheckoutForm = ({paymentUser}) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
+        
         if (!stripe || !elements) {
             return
         }
@@ -54,7 +53,7 @@ const CheckoutForm = ({paymentUser}) => {
         }
         else {
             setCardError('');
-            // console.log('payment method', paymentMethod)
+            
         }
 
         setProcessing(true)
@@ -76,7 +75,7 @@ const CheckoutForm = ({paymentUser}) => {
             console.log(confirmError);
         }
 
-        console.log('payment intent', paymentIntent)
+        
         setProcessing(false)
         if (paymentIntent.status === 'succeeded') {
             setTransactionId(paymentIntent.id);
@@ -88,30 +87,30 @@ const CheckoutForm = ({paymentUser}) => {
                 date: new Date(),
                 
             }
-            axiosSecure.post('/payments', payment)
+            axiosSecure.post('/payment', payment)
                 .then(res => {
-                    console.log(res.data);
+                  
                      if (res.data.result.insertedId) {
                     //     // display confirm
                     }
                 })
          
-                fetch(`http://localhost:5000/classesAndInstructors/payment/${paymentUser._id}`, {
+                fetch(`https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/classesAndInstructors/payment/${paymentUser.selectedId}`, {
                   method: 'PATCH'
               })
               .then(res => res.json())
               .then(data => {
-                  console.log(data)
+                  
                   if(data.modifiedCount){
                      
                   }
               })
-                fetch(`http://localhost:5000/selected/payment/${paymentUser._id}`, {
+                fetch(`https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/selected/payment/${paymentUser._id}`, {
                   method: 'PATCH'
               })
               .then(res => res.json())
               .then(data => {
-                  console.log(data)
+                 
                   if(data.modifiedCount){
                        
                   }
@@ -124,7 +123,7 @@ const CheckoutForm = ({paymentUser}) => {
     }
     return (
         <div>
-            <form className='m-4' onSubmit={handleSubmit}>
+            <form className='m-4' onSubmit={(handleSubmit)}>
         <CardElement
           options={{
             style: {
@@ -141,7 +140,7 @@ const CheckoutForm = ({paymentUser}) => {
             },
           }}
         />
-        <button className='btn btn-info' type="submit" disabled={!stripe || !clientSecret || processing}>
+        <button  className='btn btn-info' type="submit" disabled={!stripe ||!clientSecret|| processing}>
           Pay
         </button>
         

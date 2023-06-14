@@ -9,7 +9,7 @@ const useAxiosSecure = () => {
   const navigate = useNavigate(); 
 
   const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000', 
+    baseURL: 'https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app', 
   });
 
   useEffect(() => {

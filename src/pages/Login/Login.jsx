@@ -20,14 +20,14 @@ const Login = () => {
         signIn(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
+              
                 navigate(from, { replace: true })
             })
             .catch(error => {
                 console.error(error.message);
                 setError(error.message);
             })
-        console.log(data);
+       
        
     };
     const handleGoogleSignIn = (event) => {

@@ -4,7 +4,8 @@ import useMyClasses from '../../../hooks/useMyClasses';
 const MyClasses = () => {
     const isInstructor =true;
     const [myClasses]=useMyClasses();
-    console.log(myClasses);
+    
+    
     return (
         <div>
          <div className="w-full">

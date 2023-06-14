@@ -8,11 +8,11 @@ const img_hosting_token = import.meta.env.VITE_Image_Upload_token;
 
 const AddItem = () => {
     const{user}=useAuth();
-    console.log(user);
+    
     const [axiosSecure] = useAxiosSecure();
     const { register, handleSubmit, reset } = useForm();
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`
-    console.log(user.displayName);
+    
     const onSubmit = data => {
         
         const formData = new FormData();
@@ -30,7 +30,7 @@ const AddItem = () => {
                 const newClass = {name, price: parseFloat(price), instructorName ,instructorEmail,availableSeats:parseInt(availableSeats), price:parseInt(price),instructorImage,status :'pending',image:imgURL,enroll:0}
                 axiosSecure.post('/classesAndInstructors', newClass)
                 .then(data => {
-                    console.log('after posting new menu item', data.data)
+                    
                     if(data.data.insertedId){
                         reset();
                         Swal.fire({

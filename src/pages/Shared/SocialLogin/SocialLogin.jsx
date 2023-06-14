@@ -15,9 +15,9 @@ const SocialLogin = () => {
         signInWithGoogle()
             .then(result => {
                 const loggedInUser = result.user;
-                console.log(loggedInUser);
+                
                 const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email,role:"student" }
-                fetch('http://localhost:5000/users', {
+                fetch('https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

@@ -8,7 +8,7 @@ const useMyClasses = () => {
     const { refetch, data: myClasses = [] } = useQuery({
         queryKey: ['myClasses', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/myClasses?email=${user?.email}`)
+            const res = await fetch(`https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/myClasses?email=${user?.email}`)
             return res.json();
         },
     })

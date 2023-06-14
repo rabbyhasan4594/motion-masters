@@ -22,23 +22,23 @@ const Dashboard = () => {
     <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
     {
                         isAdmin ? <>
-                            <li><NavLink to="/dashboard/home"><FaHome></FaHome> Admin Home</NavLink></li>
+                            <li><p className=' text-xl'><FaHome></FaHome> Admin</p></li>
                            
-                            <li><NavLink to="/dashboard/allUsers"><FaUsers></FaUsers> All Users</NavLink></li>
+                            <li><NavLink to="/dashboard/manageUsers"><FaUsers></FaUsers> All Manage Users</NavLink></li>
                             <li><NavLink to="/dashboard/manageClasses">Manage Classes</NavLink></li>
-                            <li><NavLink to="/dashboard/manageUsers"> Manage Users</NavLink></li>
+                           
                             
                         </> : <>
                         {
                             isInstructor?<>
-                            <li><NavLink to="/dashboard/home"><FaHome></FaHome> Instructor Home</NavLink></li>
+                            <li ><p className=' text-xl'><FaHome></FaHome> Instructor</p></li>
                             <li><NavLink to="/dashboard/addAClass">Add a Class</NavLink></li>
                             <li><NavLink to="/dashboard/myClasses"> My Classes</NavLink></li>
                             </>:<>
-                            <li><NavLink to="/dashboard/home"><FaHome></FaHome> Student Home</NavLink></li>
+                            <li><p className=' text-xl'><FaHome></FaHome> Student</p></li>
                             <li><NavLink to="/dashboard/mySelectedClasses"> My Selected Classes</NavLink></li>
                             <li><NavLink to="/dashboard/myEnrolledClasses"> My Enrolled Classes</NavLink></li>
-                            <li><NavLink to="/dashboard/payments">Payments</NavLink></li>
+                            {/* <li><NavLink to="/dashboard/payments">Payments</NavLink></li> */}
                             </>
                         }
                         

@@ -10,14 +10,14 @@ import Classes from "../pages/Classes/Classes";
 import PopularClasses from "../pages/Home/PopularClasses/PopularClasses";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Layout/Dashboard";
-import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 import MySelectedClasses from "../pages/Dashboard/MySelectedClasses/MySelectedClasses";
 import Payment from "../pages/Dashboard/Payment/Payment";
 import AddAClass from "../pages/Dashboard/AddAClass/AddAClass";
 import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
-import Payments from "../pages/Dashboard/Payments/Payments";
+
 import MyEnrolledClasses from "../pages/Dashboard/MyEnrolledClasses/MyEnrolledClasses";
 import ManageClasses from "../pages/Dashboard/ManageClasses/manageClasses";
+import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
 
 
 
@@ -54,6 +54,7 @@ import ManageClasses from "../pages/Dashboard/ManageClasses/manageClasses";
           path: '/instructors',
           element: <Instructors></Instructors>,
       },
+        
 
       ]
     },
@@ -63,8 +64,8 @@ import ManageClasses from "../pages/Dashboard/ManageClasses/manageClasses";
       children: [
         //admin
         {
-          path: 'allUsers',
-          element:<AllUsers></AllUsers>
+          path: 'manageUsers',
+          element:<ManageUsers></ManageUsers>
         },
         {
           path: 'manageClasses',
@@ -89,13 +90,9 @@ import ManageClasses from "../pages/Dashboard/ManageClasses/manageClasses";
         {
           path: 'payment/:id',
           element:<Payment></Payment>,
-          loader: ({params}) => fetch(`http://localhost:5000/dashboard/payment/${params.id}`)
+          loader: ({params}) => fetch(`https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/dashboard/payment/${params.id}`)
         },
-        {
-          path: 'payments',
-          element:<Payments></Payments>,
-          
-        },
+       
         {
           path: 'myEnrolledClasses',
           element:<MyEnrolledClasses></MyEnrolledClasses>,

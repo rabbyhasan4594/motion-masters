@@ -5,7 +5,7 @@ const useClassesAndInstructorsPending = () => {
     const { isLoading, isError, data: users=[], error,refetch } = useQuery({
         queryKey: ['classesAndInstructors'],
         queryFn: async () => {
-            const response = await fetch('http://localhost:5000/classesAndInstructors/')
+            const response = await fetch('https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/classesAndInstructors/')
             
             return response.json()
         }

@@ -1,22 +1,26 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import useClasses from '../../../hooks/useClasses';
+import useAuth from '../../../hooks/useAuth';
+import useAdmin from '../../../hooks/useAdmin';
+
 
 const PopularClass = ({data}) => {
+    
     const{name,image,instructorName,price,availableSeats,_id}=data;
 
-    const {user} = useContext(AuthContext);
+    const{user}=useAuth();
     const navigate = useNavigate();
     const location = useLocation();
     const [, refetch] = useClasses();
 
     const handleAddToSelected = data => {
-        // console.log(item);
+       
         if(user && user.email){
-             const selectedClass = {_id: _id, name, image,instructorName,availableSeats, price, email: user.email}
-            fetch('http://localhost:5000/selected', {
+             const selectedClass = {selectedId: _id,payment:"no", name, image,instructorName,availableSeats, price, email: user.email}
+            fetch('https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/selected', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -65,10 +69,11 @@ const PopularClass = ({data}) => {
             <p className=" text-cyan-700">Available Seats: ${availableSeats}</p>
             <p className=" text-cyan-700">Price: ${price}</p>
             <div className="card-actions">
-                <Link to={`/`}>
-                <button onClick={() => handleAddToSelected(data)} className="btn btn-outline btn-accent">Enroll Now</button>
+               
+                <button  onClick={() => handleAddToSelected(data)} className="btn btn-active btn-secondary">Enroll Now</button>
 
-                </Link>
+               
+               
             </div>
         </div>
     </div> 

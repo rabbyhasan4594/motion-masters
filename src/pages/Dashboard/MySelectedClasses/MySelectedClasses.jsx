@@ -2,16 +2,59 @@
 import useClasses from '../../../hooks/useClasses';
 import { FaTrashAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 
 const MySelectedClasses = () => {
     const [selected] = useClasses()
-    console.log(selected);
+   
+
+    const handleDelete = _id => {
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+
+                fetch(`https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/selected/class/${_id}`, {
+                    method: "DELETE",
+
+                })
+                    .then((res) => res.json())
+                    .then((data) => {
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success',
+
+                            )
+                            setDeleteControl(!deleteControl)
+
+                        }
+
+                    });
+            }
+        })
+    }
+
+
 
     const handleClick = user => {
 
     }
-    // console.log(pay);
+    
 
     return (
         <div>
@@ -41,7 +84,7 @@ const MySelectedClasses = () => {
                                     <td> <Link to={`/dashboard/payment/${user._id}`}>
                                         <button className="btn btn-info">Pay</button>
                                     </Link> </td>
-                                    <td><button className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button></td>
+                                    <td><button onClick={() => handleDelete(user._id)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button></td>
 
                                 </tr>)
                             }
