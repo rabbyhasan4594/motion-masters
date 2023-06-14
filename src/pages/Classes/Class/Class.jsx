@@ -7,15 +7,15 @@ import useAuth from '../../../hooks/useAuth';
 import useAdmin from '../../../hooks/useAdmin';
 import useInstructor from '../../../hooks/useInstructor';
 
-const Class = ({data,user}) => {
+const Class = ({data}) => {
     const{name,image,instructorName,price,availableSeats,_id}=data;
-   
+   const{user} =useAuth()
     const navigate = useNavigate();
     const location = useLocation();
     const [, refetch] = useClasses();
     const handleAddToSelected = data => {
         if(user && user.email){
-             const selectedClass = {selectedId: _id,payment:"no", name, image,instructorName,availableSeats, price, email: user.email}
+             const selectedClass = {selectedId: _id,payment:"no", name, image,instructorName,availableSeats, price, email: user.email,payment:'no'}
             fetch('https://motion-masters-dance-academy-server-rabbyhasan4594.vercel.app/selected', {
                 method: 'POST',
                 headers: {

@@ -7,13 +7,10 @@ import SectionTitle from '../../component/SectionTitle/SectionTitle';
 
 const Classes = () => {
     const [data] = useClassesAndInstructors();
-    const user = useLoaderData();
     
 
-
-
     const classes = data;
-   
+    console.log(classes);
     return (
         <section className="mb-12">
             <div className="lg:pt-20"></div>
@@ -26,7 +23,6 @@ const Classes = () => {
                     classes.map(data => <Class
                         key={data._id}
                         data={data}
-                        user={user}
                     ></Class>)
                 }
             </div>
