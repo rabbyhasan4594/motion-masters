@@ -56,9 +56,9 @@ const Class = ({data}) => {
 
     return (
         <div>
-             <div className="card w-[370px] sm:w-[350px] bg-base-100 shadow-xl mx-auto">
-        <figure className="px-10 pt-10">
-            <img src={image} alt="Image" className="rounded-xl h-56" />
+             <div className="card  bg-base-100 shadow-xl mx-auto">
+        <figure className="">
+            <img src={image} alt="Image" className="rounded-se-xl h-56 w-full" />
         </figure>
         <div className="card-body">
             <h2 className="card-title">Name: {name}</h2>

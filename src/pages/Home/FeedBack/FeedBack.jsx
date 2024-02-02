@@ -22,9 +22,7 @@ const FeedBack = () => {
     return (
         <section>
            
-           <SectionTitle
-                heading="Popular Classes"
-            ></SectionTitle>
+           
             <div className=''>
                 <div className=' lg:w-1/3 lg:mx-96 py-5 rounded-lg'>
                     
